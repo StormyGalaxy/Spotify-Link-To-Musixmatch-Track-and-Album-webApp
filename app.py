@@ -178,7 +178,7 @@ async def split():
             track2["track"] = sp_data2[0]["track"]
             try:
                 if track1["isrc"] != track2["isrc"] and track1["commontrack_id"] == track2["commontrack_id"]:
-                    message = f"""Can be splitted </br>
+                    message = f"""Can be split </br>
                         you can c/p:</br>
                         :mxm: <a href="{track1["track_share_url"]}" target="_blank">MXM Page</a> </br>
                         :spotify: <a href="{link}" target="_blank">{track1["track"]["name"]}</a>,
@@ -187,9 +187,9 @@ async def split():
                         :isrc: {track2["isrc"]}
                         """
                 elif track1["isrc"] == track2["isrc"] and track1["commontrack_id"] == track2["commontrack_id"]:
-                    message = "Can not be splitted as they have the Same ISRC"
+                    message = "Can not be split as they have the Same ISRC"
                 else:
-                    message = "They have different Pages"
+                    message = "They have different pages"
             except:
                 return render_template('split.html', error="Something went wrong")
 
